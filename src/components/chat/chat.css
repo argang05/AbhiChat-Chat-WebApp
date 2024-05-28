@@ -1,0 +1,176 @@
+.chat{
+    flex: 2;
+    border-left: 1px solid #dddddd35;
+    border-right: 1px solid #dddddd35;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .top{
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #dddddd35;
+
+        .user{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            img{
+                height: 50px;
+                width: 50px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            .desc{
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                span{
+                    font-size: 15px;
+                    font-weight: 700;
+                }
+                p{
+                    font-size: 12px;
+                    font-weight: 100;
+                    color: rgba(240, 248, 255, 0.728);
+                } 
+            }
+        }
+        .icons{
+            display: flex;
+            gap: 10px;
+            img{
+                height: 20px;
+                width: 20px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .center{
+        padding: 20px;
+        flex: 1;
+        overflow: scroll;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .message{
+            display: flex;
+            gap: 10px;
+            max-width: 60%;
+            &.own{
+                align-self: flex-end;
+                max-width: 60%;
+                .texts{
+                    p{
+                        background-color: #5183fe;
+                        padding: 12px;
+                        border-radius: 20px;
+                        font-size: 14px;
+                    }
+                    span{
+                        font-size: 12px;
+                        font-weight: 100;
+                        color: rgba(240, 248, 255, 0.728);
+                    }
+                }
+            }
+            img{
+                height: 30px;
+                width: 30px;
+                border-radius: 50%;
+            }
+            .texts{
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                img{
+                    width: 100%;
+                    height: 200px;
+                    border-radius: 15px;
+                    object-fit: cover;
+                }
+                p{
+                    background-color: rgba(17,25,40,0.5);
+                    padding: 12px;
+                    border-radius: 20px;
+                    font-size: 14px;
+                }
+                span{
+                    font-size: 12px;
+                    font-weight: 100;
+                    color: rgba(240, 248, 255, 0.728);
+                }
+            }
+        }
+    }
+    .center::-webkit-scrollbar{
+        display: none;
+    }
+
+    .bottom{
+        margin-top: auto;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid #dddddd35;
+        gap: 10px;
+
+        img{
+            height: 22px;
+            width: 22px;
+            cursor: pointer;
+        }
+
+        .icons{
+            display: flex;
+            gap: 10px;
+        }
+        input{
+            flex: 1;
+            border: none;
+            background-color: rgba(17,25,40,0.5);
+            outline: none;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            &:disabled{
+               cursor: not-allowed;
+            }
+        }
+        .emoji{
+            position: relative;
+            .picker{
+                position: absolute;
+                bottom: 50px;
+                left: 0;
+            }
+        }
+        .sendButton{
+            background-color: #5182feb7;
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: bold;
+            color: #fff;
+            cursor: pointer;
+            &:hover{
+                background-color: #5183fe;
+            }
+            &:disabled{
+               background-color: #5182fe81; 
+               cursor: not-allowed;
+            }
+        }
+    }
+}
